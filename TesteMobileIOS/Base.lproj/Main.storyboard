@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,43 +19,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3r-FP-tp3">
-                                <rect key="frame" x="79" y="28" width="443" height="529"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dRq-nF-Db0">
+                                <rect key="frame" x="20" y="80" width="560" height="395"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teste Sambatech" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yy6-sg-fgu">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vídeo sambatech" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Bq-OD-K97">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="changeText:forEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="jx9-mb-yPD"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Default Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Ina-XG-Ot7">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ina-XG-Ot7" secondAttribute="height" multiplier="1:1" id="WIS-cs-N7x"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="D1z-DU-i08" appends="YES" id="ro0-03-C3h"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="537" id="2a7-D3-rvc"/>
-                                    <constraint firstAttribute="width" constant="443" id="OV0-po-Ak6"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Bq-OD-K97" secondAttribute="trailing" id="C4B-6R-rTy"/>
+                                    <constraint firstItem="0Bq-OD-K97" firstAttribute="leading" secondItem="dRq-nF-Db0" secondAttribute="leading" id="Cb6-2C-I4x"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2a7-D3-rvc"/>
-                                    </mask>
-                                </variation>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s3r-FP-tp3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2JL-S6-T0L"/>
-                            <constraint firstItem="s3r-FP-tp3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="VcZ-zZ-fm0"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s3r-FP-tp3" secondAttribute="bottom" constant="43" id="o8z-ke-996"/>
-                            <constraint firstItem="s3r-FP-tp3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pKa-PL-odv"/>
-                            <constraint firstItem="s3r-FP-tp3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="q1V-Ta-auL"/>
+                            <constraint firstItem="dRq-nF-Db0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8eF-TE-iRf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dRq-nF-Db0" secondAttribute="trailing" id="t2y-OY-d5o"/>
+                            <constraint firstItem="dRq-nF-Db0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="zy4-BF-R5C"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="2JL-S6-T0L"/>
-                                <exclude reference="q1V-Ta-auL"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="PlayerContainer" destination="s3r-FP-tp3" id="K20-Fa-gwI"/>
-                        <outlet property="playerContainer" destination="s3r-FP-tp3" id="tMK-46-NWG"/>
+                        <outlet property="nameTextField" destination="0Bq-OD-K97" id="1kU-uK-sDT"/>
+                        <outlet property="photoImageView" destination="Ina-XG-Ot7" id="dxi-ie-CjE"/>
+                        <outlet property="titleNameLabel" destination="yy6-sg-fgu" id="4UO-78-47f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="D1z-DU-i08">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="mgc-um-WJz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="255" y="357"/>
+            <point key="canvasLocation" x="465" y="374"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Default Photo" width="640" height="360"/>
+    </resources>
 </document>
