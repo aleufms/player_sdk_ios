@@ -43,7 +43,7 @@ Basta executar `carthage update` para compilar o `SambaPlayerSDK.framework`. Em 
 
 ##Outros
 
-Há um comportamento [conhecido](https://github.com/CocoaPods/CocoaPods/wiki/Generate-ASCII-format-xcodeproj) em que o CocoaPods modifica o arquivo do projeto (*.xcodeproj/project.pbxproj) ao baixar as dependências convertendo-o de PList para XML, que pode causar conflito neste arquivo inteiro ao mesclá-lo.
+Há um comportamento [conhecido](https://github.com/CocoaPods/CocoaPods/wiki/Generate-ASCII-format-xcodeproj) em que o CocoaPods modifica o formato do arquivo do projeto (*.xcodeproj/project.pbxproj) ao baixar as dependências convertendo-o de PList para XML, o que pode causar conflito neste arquivo inteiro ao mesclá-lo.
 
 Para mitigar este comportamento, basta instalar o utilitário [xcproj](https://github.com/0xced/xcproj) e executar `xcproj touch` na pasta do projeto, que o arquivo de projeto será revertido para PList.
 
